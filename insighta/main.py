@@ -43,12 +43,10 @@ def cli():
 def login():
     """Login with GitHub OAuth"""
     console.print("[bold]Opening GitHub login in your browser...[/bold]")
-    console.print(f"Visit: [cyan]{BASE_URL}/auth/github[/cyan]")
+    console.print(f"Visit: [cyan]{BASE_URL}/auth/github?cli=true[/cyan]")
     console.print("")
     console.print("After logging in, paste your access token and refresh token below.")
-    console.print(
-        "[dim](They appear in the redirect URL after ?access_token= and &refresh_token=)[/dim]"
-    )
+    console.print("[dim](They appear in the JSON response after GitHub redirects.)[/dim]")
     console.print("")
 
     access_token = click.prompt("Access token")
